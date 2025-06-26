@@ -45,13 +45,13 @@ MiniLM (short for Miniature Language Model) is a compact transformer model from 
 
   ---
 
-  ## Step-by-Step Role of MiniLM
-  - 1. **Sentence Tokenization** : The input text is split into individual sentences using NLTK.
-    2. **Sentence Embedding with MiniLM** : Each sentence is passed through MiniLM to get a high-dimensional semantic vector
-    3. **Semantic Clustering via KMeans** : These embeddings are grouped using KMeans clustering to detect central "topics" or "themes" across the document.
-    4. **Centroid Sentence Selection** : From each cluster, the sentence closest to the center is chosen — this represents the "core idea" of that theme.
-    5. **Ranking with Frequency (TF)** : To refine these, you apply frequency-based scoring and keep the most content-rich, diverse ones.
-    6. **Optional Recursive Pass (if input is long)**:The same MiniLM is reused to embed partial summaries and summarize again.
+## Step-by-Step Role of MiniLM
+1. **Sentence Tokenization** : The input text is split into individual sentences using NLTK.
+2. **Sentence Embedding with MiniLM** : Each sentence is passed through MiniLM to get a high-dimensional semantic vector
+3. **Semantic Clustering via KMeans** : These embeddings are grouped using KMeans clustering to detect central "topics" or "themes" across the document.
+4. **Centroid Sentence Selection** : From each cluster, the sentence closest to the center is chosen — this represents the "core idea" of that theme.
+5. **Ranking with Frequency (TF)** : To refine these, you apply frequency-based scoring and keep the most content-rich, diverse ones.
+6. **Optional Recursive Pass (if input is long)**:The same MiniLM is reused to embed partial summaries and summarize again.
 
 ---
 
